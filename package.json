@@ -2,10 +2,20 @@
   "name": "hearthstone",
   "version": "1.0.0",
   "description": "Coding Hearthstone cards as a way to learn programming",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-dev": "jest --watch test",
+    "test": "jest test",
     "debug": "node --nolazy --inspect-brk=9229 built/launch.js"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts)$": "ts-jest"
+    },
+    "testRegex": "/test/.*\\.ts$"
   },
   "repository": {
     "type": "git",
@@ -18,7 +28,10 @@
   },
   "homepage": "https://github.com/lazywithclass/hearthstone#readme",
   "devDependencies": {
+    "@types/jest": "^23.3.13",
     "@types/node": "^10.12.21",
+    "jest": "^24.0.0",
+    "ts-jest": "^23.10.5",
     "typescript": "^3.2.4"
   }
 }

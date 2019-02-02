@@ -23,8 +23,6 @@ let defaultBoard: Board = {
   history: defaultBoardHistory
 }
 
-const getBoard = (currentBoard: Board = defaultBoard) => ({
-  ...defaultBoard
-})
+const getBoard = (board: Board = defaultBoard) => board
 
 export { Board, BoardHistory, getBoard }

@@ -7,11 +7,13 @@ type Player = {
   crystals: Crystals
 }
 
-let init = (): Player => ({
+let defaultPlayer = {
   crystals: {
     used: 0,
     free: 0
   }
-})
+}
+
+let init = (player: Player = defaultPlayer): Player => player
 
 export { init, Player, Crystals }

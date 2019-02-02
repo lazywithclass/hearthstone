@@ -12,7 +12,7 @@ let ArcaneGiant = function (): Card {
   }
 
   const canPlay: Card["canPlay"] = (board) =>
-    board.me.crystals.free <= cardState.cost(board.history)
+    cardState.cost(board.history) <= board.me.crystals.free
 
   const play: Card["play"] = (board) => {
     board.cards.push(this)
