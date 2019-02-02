@@ -15,7 +15,8 @@
     "transform": {
       "\\.(ts)$": "ts-jest"
     },
-    "testRegex": "/test/.*\\.ts$"
+    "testRegex": "/test/.*\\.ts$",
+    "collectCoverage": true
   },
   "repository": {
     "type": "git",
