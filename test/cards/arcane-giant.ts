@@ -12,8 +12,7 @@ describe('Arcane Giant', () => {
       me: Player.init({ crystals: { used: 0, free: 10 } }),
       opponent: Player.init()
     })
-    let arcaneGiant = ArcaneGiant()
-    expect(arcaneGiant.canPlay(board))
+    expect(ArcaneGiant().canPlay(board)).toBeTruthy()
   })
 
   test('without enough crystals cannot be played', () => {
@@ -24,8 +23,7 @@ describe('Arcane Giant', () => {
       me: Player.init({ crystals: { used: 0, free: 10 } }),
       opponent: Player.init()
     })
-    let arcaneGiant = ArcaneGiant()
-    expect(arcaneGiant.canPlay(board)).toBeFalsy()
+    expect(ArcaneGiant().canPlay(board)).toBeFalsy()
   })
 
 })

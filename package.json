@@ -4,7 +4,7 @@
   "description": "Coding Hearthstone cards as a way to learn programming",
   "scripts": {
     "test-dev": "jest --watch test",
-    "test": "jest test",
+    "test": "jest --coverage",
     "debug": "node --nolazy --inspect-brk=9229 built/launch.js"
   },
   "jest": {
@@ -15,8 +15,7 @@
     "transform": {
       "\\.(ts)$": "ts-jest"
     },
-    "testRegex": "/test/.*\\.ts$",
-    "collectCoverage": true
+    "testRegex": "/test/.*\\.ts$"
   },
   "repository": {
     "type": "git",
