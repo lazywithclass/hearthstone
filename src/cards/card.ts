@@ -1,6 +1,10 @@
-import { Board } from '../board-state'
+import { PlayerState } from '../player'
 
 export type Card = {
-  canPlay: (board: Board) => boolean
-  play:  (board: Board) => Board
+  state?: {
+    strength: number
+    constitution: number
+  }
+  cost: (playerState: PlayerState) => number
+  play:  (playerState: PlayerState) => PlayerState
 }
