@@ -5,12 +5,15 @@ let MindControl = function (): Card {
 
   const cost = () => 10
 
-  const play: Card["play"] = (playerState: PlayerState) => {
+  const play: Card['play'] = (playerState) => {
     playerState.spellsPlayed.push(MindControl())
     return playerState
   }
 
-  return { play, cost }
+  const canPlay: Card['canPlay'] = (playerState) =>
+    cost() <= playerState.crystals.free
+
+  return { canPlay, play, cost }
 }
 
 export = MindControl

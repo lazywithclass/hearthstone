@@ -6,5 +6,6 @@ export type Card = {
     constitution: number
   }
   cost: (playerState: PlayerState) => number
+  canPlay:  (playerState: PlayerState) => boolean
   play:  (playerState: PlayerState) => PlayerState
 }

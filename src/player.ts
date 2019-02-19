@@ -25,9 +25,6 @@ export let init = (): PlayerState => ({
   spellsPlayed: []
 })
 
-export let canPlay = (playerState: PlayerState, card: Card) =>
-  card.cost(playerState) <= playerState.crystals.free
-
 export let spellsPlayed = (playerState: PlayerState) => {
   function recurse(state: PlayerState, runningTotal: number): number {
     runningTotal += state.spellsPlayed.length

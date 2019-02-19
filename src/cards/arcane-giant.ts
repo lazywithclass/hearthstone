@@ -11,12 +11,15 @@ let ArcaneGiant = function (): Card {
   const cost = (playerState: PlayerState) =>
     Math.max(0, 12 - spellsPlayed(playerState))
 
-  const play: Card["play"] = (board) => {
+  const play: Card['play'] = (playerState) => {
     // board.cards.push(this)
-    return board
+    return playerState
   }
 
-  return { play, cost, state }
+  const canPlay: Card['canPlay'] = (playerState) =>
+    cost(playerState) <= playerState.crystals.free
+
+  return { canPlay, play, cost, state }
 }
 
 export = ArcaneGiant
